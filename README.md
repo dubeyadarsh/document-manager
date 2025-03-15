@@ -1,27 +1,51 @@
-# DocumentManager
+# Document Manager Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.9.
+## Description
+The Document Manager Application allows users to upload, view, edit, and delete documents (such as PDFs and images) along with their metadata (name and description). All document data, including files and metadata, are saved to the browser's local storage for persistent storage.
 
-## Development server
+This application is built using **Angular 18.2** for the frontend and **Node.js 20.18** for backend functionalities (if applicable).
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+1. **Upload Document:** 
+   - Users can upload a document (e.g., PDF, image) along with a document name and description via a form.
+   
+2. **View Documents List:** 
+   - Users can view all uploaded documents in a list format.
+   
+3. **Edit Document Metadata:**
+   - Users can edit the name and description of any uploaded document.
+   
+4. **Delete Document:**
+   - Users can delete documents from the list.
+   
+5. **Local Storage:**
+   - All document metadata and files are saved to the browser's local storage.
+   
+6. **Deployment:** 
+   - The application is deployed and accessible via platforms like GitHub Pages, Vercel, or Netlify.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
+- Node.js (v20.18)
+- Angular CLI (18.2)
+- Git
 
-## Build
+### Steps to Set Up Locally
+1. **Clone the repository:**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+   ```bash
+   git clone https://github.com/dubeyadarsh/document-manager.git
+   cd document-manager
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+2. **Install the Dependencies
+    ```bash
+	npm install
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. **Serve the application
+	```bash
+	ng serve
+	
+The application will be available at http://localhost:4200/.
