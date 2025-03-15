@@ -1,0 +1,60 @@
+<div class="card shadow-sm">
+  <div class="card-header headerBg text-white">
+    <h5 class="mb-0">📜 Uploaded Documents</h5>
+  </div>
+  <div class="card-body">
+    <div *ngIf="documents.length === 0" class="alert alert-warning text-center">
+      No documents uploaded yet.
+    </div>
+
+    <table *ngIf="documents.length > 0" class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Document Name</th>
+          <th>Description</th>
+          <th>Preview</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let doc of documents; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ doc.name }}</td>
+          <td>{{ doc.description }}</td>
+          <td>
+            <a (click)="downloadDocument(doc)" class="matIcon visIcon">
+                <mat-icon>download</mat-icon> 
+            </a>
+          </td>
+          <td>
+            <a class="matIcon me-2 text-warning" (click)="openEditModal(doc)">
+              <mat-icon>edit</mat-icon>
+            </a>
+            <a class=" matIcon text-danger" (click)="deleteDocument(doc.id)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div *ngIf="selectedDocument" class="edit-modal">
+  <div class="modal-content">
+    <div class="headerBg text-white p-2">
+      <h5 class="mb-0">✏️ Edit Document</h5>
+    </div>
+    <div class="p-3">
+      <label>Document Name</label>
+      <input type="text" class="form-control mb-2" [(ngModel)]="selectedDocument.name" />
+      <label>Description</label>
+      <textarea class="form-control mb-3" [(ngModel)]="selectedDocument.description"></textarea>
+      <div class="d-flex gap-2 justify-content-center">
+        <button class="btn headerBg text-white p-2 w-25" (click)="saveEdit()"> Save</button>
+        <button class="btn btn-danger text-white p-2 w-25" (click)="selectedDocument = null"> Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="card shadow-sm">
+    <div class="card-header headerBg text-white">
+      <h5 class="mb-0">📄 Upload Document</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onUpload()" [formGroup]="uploadForm">
+        <div class="mb-3">
+          <label for="docName" class="form-label fw-bold">Document Name</label>
+          <input
+            type="text"
+            id="docName"
+            class="form-control"
+            formControlName="docName"
+            placeholder="Enter document name"
+          />
+          <div class="text-danger" *ngIf="uploadForm.get('docName')?.invalid && uploadForm.get('docName')?.touched">
+            Document Name is required!
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="docDescription" class="form-label fw-bold">Document Description</label>
+          <textarea
+            id="docDescription"
+            class="form-control"
+            formControlName="docDescription"
+            placeholder="Enter document description"
+          ></textarea>
+        </div>
+  
+        <div class="mb-3">
+          <label for="docFile" class="form-label fw-bold">Upload Document (PDF, JPEG, PNG)</label>
+          <input
+            type="file"
+            id="docFile"
+            class="form-control"
+            (change)="onFileSelected($event)"
+            accept=".pdf, .jpeg, .jpg, .png"
+          />
+          <div class="text-danger" *ngIf="fileError">
+            Please upload a valid file (PDF, JPEG, PNG)!
+          </div>
+        </div>
+  
+        <button type="submit" class="btn headerBg w-100 text-white" [disabled]="uploadForm.invalid || !selectedFile">
+          📤 Upload Document
+        </button>
+      </form>
+    </div>
+  </div>
+  
