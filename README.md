@@ -22,7 +22,8 @@ This application is built using **Angular 18.2** for the frontend and **Node.js 
    - All document metadata and files are saved to the browser's local storage.
    
 6. **Deployment:** 
-   - The application is deployed and accessible via platforms like GitHub Pages, Vercel, or Netlify.
+   - The application is deployed and accessible via Netlify.
+   - https://docs-management.netlify.app/upload
 
 ## Installation
 
